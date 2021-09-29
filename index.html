@@ -16,10 +16,16 @@
 
     <script>
         let clock = () => {
+
+        //adding standard time 
         let date = new Date();
+
+        //extracting hrs, mins, seconds from the actual object
         let hrs = date.getHours();
         let mins = date.getMinutes();
         let secs = date.getSeconds();
+
+        //adding a time period such as AM or PM(since we need our clock in 12hrs format)
         let period = "AM";
         if (hrs == 0) {
             hrs = 12;
@@ -27,6 +33,7 @@
             hrs = hrs - 12;
             period = "PM";
         }
+
         hrs = hrs < 10 ? "0" + hrs : hrs;
         mins = mins < 10 ? "0" + mins : mins;
         secs = secs < 10 ? "0" + secs : secs;
@@ -36,6 +43,7 @@
         setTimeout(clock, 1000);
         };
 
+    //Calling the clock function
     clock();
 
     </script>
